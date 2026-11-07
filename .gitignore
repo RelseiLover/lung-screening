@@ -18,6 +18,7 @@ frontend/dist/
 artifacts/
 *.zip
 *.mp4
+!/media/demo.mp4
 .DS_Store
 Thumbs.db
 .idea/
