@@ -1,0 +1,121 @@
+[
+  {
+    "filename": "densenet121_best.pth",
+    "sha256": "4e0b0b056e6955eb0c916ade8e96bd5125f286e169c271bba8c8360af7ab11b3",
+    "top_level_keys": [
+      "epoch",
+      "model_state",
+      "optimizer_state",
+      "scheduler_state"
+    ],
+    "available_metadata": {
+      "epoch": 30
+    },
+    "provenance_verified": false
+  },
+  {
+    "filename": "efficientnetv2s_best.pth",
+    "sha256": "4afb76e15c4ac6e1276374a3de9131ec9114f8bbc79f58813b76890fee11e863",
+    "top_level_keys": [
+      "epoch",
+      "model_state",
+      "optimizer_state",
+      "config"
+    ],
+    "available_metadata": {
+      "epoch": 4
+    },
+    "provenance_verified": false,
+    "available_training_config": {
+      "training": {
+        "model_name": "tf_efficientnetv2_s",
+        "pretrained": true,
+        "batch_size": 16,
+        "epochs": 30,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "optimizer": "adamw",
+        "scheduler": "reduce_on_plateau",
+        "patience": 3,
+        "factor": 0.5,
+        "min_lr": 1e-06,
+        "label_smoothing": 0.05,
+        "use_class_weights": false,
+        "class_weights": [
+          0.9385,
+          1.4584,
+          0.8007
+        ]
+      },
+      "data_module": {
+        "batch_size": 16,
+        "num_workers": 2,
+        "pin_memory": true,
+        "normalization_mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "normalization_std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "use_weighted_sampler": true
+      },
+      "dataset": {
+        "splits": [
+          "train",
+          "val",
+          "test"
+        ],
+        "classes": [
+          "normal",
+          "pneumonia",
+          "tuberculosis"
+        ],
+        "image_exts": [
+          ".png",
+          ".jpg",
+          ".jpeg"
+        ],
+        "target_image_size": [
+          512,
+          512
+        ]
+      },
+      "augmentation": {
+        "random_resized_crop": {
+          "scale": [
+            0.9,
+            1.0
+          ],
+          "ratio": [
+            0.95,
+            1.05
+          ]
+        },
+        "horizontal_flip": false,
+        "rotation_degrees": 12,
+        "color_jitter": [
+          0.1,
+          0.1,
+          0.1,
+          0.05
+        ],
+        "color_jitter_prob": 0.7
+      },
+      "evaluation": {
+        "metrics": [
+          "accuracy",
+          "precision",
+          "recall",
+          "f1"
+        ],
+        "confusion_matrix": true,
+        "roc_auc": true,
+        "primary_metric": "accuracy"
+      }
+    }
+  }
+]

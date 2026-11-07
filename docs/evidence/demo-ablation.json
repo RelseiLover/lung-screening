@@ -1,0 +1,254 @@
+{
+  "purpose": "Functional comparison on six deliberately selected demo images; not independent clinical evaluation.",
+  "ablation_scope": "Return no retrieved documents; symptom rules, fallback knowledge and downstream guards remain enabled. Not a full removal of every RAG-associated rule.",
+  "cloud_llm_enabled": false,
+  "remote_specialists_enabled": false,
+  "cases": [
+    {
+      "image": "01_clear_normal_low_risk.jpg",
+      "symptom": "无明显不适，体检胸片筛查。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.9882475733757019,
+            "pneumonia": 0.0028182072564959526,
+            "tuberculosis": 0.008934237994253635
+          },
+          "top_class": "normal",
+          "elapsed_seconds_including_possible_initial_load": 18.806
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.2839218080043793,
+            "pneumonia": 0.18728530406951904,
+            "tuberculosis": 0.5287928581237793
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 1.158
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "正常/低风险",
+        "confidence": 0.82,
+        "route_decision": "low_risk",
+        "rag_infectious_score": 0.0,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "without_retrieved_documents": {
+        "screening_result": "正常/低风险",
+        "confidence": 0.82,
+        "route_decision": "low_risk",
+        "rag_infectious_score": 0.0,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "result_changed": false
+    },
+    {
+      "image": "02_clear_pneumonia_acute_infection.jpg",
+      "symptom": "发热3天，咳嗽咳黄痰，伴胸痛。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.009304257109761238,
+            "pneumonia": 0.9771873354911804,
+            "tuberculosis": 0.01350835245102644
+          },
+          "top_class": "pneumonia",
+          "elapsed_seconds_including_possible_initial_load": 0.35
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.017473729327321053,
+            "pneumonia": 0.9515041708946228,
+            "tuberculosis": 0.031022101640701294
+          },
+          "top_class": "pneumonia",
+          "elapsed_seconds_including_possible_initial_load": 0.385
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.95,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.19,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "without_retrieved_documents": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.95,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.14,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "result_changed": false
+    },
+    {
+      "image": "03_clear_tuberculosis_chronic.jpg",
+      "symptom": "咳嗽1个月，夜间盗汗，体重下降，偶有咯血。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.005254236049950123,
+            "pneumonia": 0.0025141071528196335,
+            "tuberculosis": 0.9922316074371338
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 0.29
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.04654518887400627,
+            "pneumonia": 0.06643685698509216,
+            "tuberculosis": 0.8870179653167725
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 0.298
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "慢性异常风险倾向",
+        "confidence": 0.95,
+        "route_decision": "chronic",
+        "rag_infectious_score": 0.04,
+        "rag_chronic_score": 0.21,
+        "iteration": 1
+      },
+      "without_retrieved_documents": {
+        "screening_result": "慢性异常风险倾向",
+        "confidence": 0.95,
+        "route_decision": "chronic",
+        "rag_infectious_score": 0.04,
+        "rag_chronic_score": 0.16,
+        "iteration": 1
+      },
+      "result_changed": false
+    },
+    {
+      "image": "04_boundary_pneumonia_review.jpg",
+      "symptom": "咳嗽1周，黄痰，低热，活动后有些气促。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.3689648509025574,
+            "pneumonia": 0.6147179007530212,
+            "tuberculosis": 0.016317203640937805
+          },
+          "top_class": "pneumonia",
+          "elapsed_seconds_including_possible_initial_load": 0.368
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.1287221908569336,
+            "pneumonia": 0.770523726940155,
+            "tuberculosis": 0.10075407475233078
+          },
+          "top_class": "pneumonia",
+          "elapsed_seconds_including_possible_initial_load": 0.375
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.95,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.19,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "without_retrieved_documents": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.95,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.14,
+        "rag_chronic_score": 0.0,
+        "iteration": 1
+      },
+      "result_changed": false
+    },
+    {
+      "image": "05_boundary_tuberculosis_review.jpg",
+      "symptom": "咳嗽2周以上，乏力，夜间出汗，食欲下降。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.12904390692710876,
+            "pneumonia": 0.015885857865214348,
+            "tuberculosis": 0.855070173740387
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 0.303
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.05687422305345535,
+            "pneumonia": 0.04290110617876053,
+            "tuberculosis": 0.9002246856689453
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 0.302
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "慢性异常风险倾向",
+        "confidence": 0.79,
+        "route_decision": "chronic",
+        "rag_infectious_score": 0.04,
+        "rag_chronic_score": 0.1,
+        "iteration": 3
+      },
+      "without_retrieved_documents": {
+        "screening_result": "慢性异常风险倾向",
+        "confidence": 0.78,
+        "route_decision": "chronic",
+        "rag_infectious_score": 0.04,
+        "rag_chronic_score": 0.04,
+        "iteration": 3
+      },
+      "result_changed": false
+    },
+    {
+      "image": "06_normal_conflict_case.jpg",
+      "symptom": "高热4天，咳嗽咳黄痰，胸痛气促明显。",
+      "models": {
+        "tf_efficientnetv2_s.in21k_ft_in1k": {
+          "scores": {
+            "normal": 0.6174907684326172,
+            "pneumonia": 0.010758096352219582,
+            "tuberculosis": 0.3717511296272278
+          },
+          "top_class": "normal",
+          "elapsed_seconds_including_possible_initial_load": 0.292
+        },
+        "densenet121": {
+          "scores": {
+            "normal": 0.052649352699518204,
+            "pneumonia": 0.0641789585351944,
+            "tuberculosis": 0.8831717371940613
+          },
+          "top_class": "tuberculosis",
+          "elapsed_seconds_including_possible_initial_load": 0.308
+        }
+      },
+      "with_retrieval": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.84,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.19,
+        "rag_chronic_score": 0.0,
+        "iteration": 3
+      },
+      "without_retrieved_documents": {
+        "screening_result": "感染性肺部异常倾向",
+        "confidence": 0.84,
+        "route_decision": "infectious",
+        "rag_infectious_score": 0.14,
+        "rag_chronic_score": 0.0,
+        "iteration": 3
+      },
+      "result_changed": false
+    }
+  ]
+}

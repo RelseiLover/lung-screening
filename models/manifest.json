@@ -1,0 +1,16 @@
+[
+  {
+    "filename": "densenet121_best.pth",
+    "bytes": 84315154,
+    "sha256": "4e0b0b056e6955eb0c916ade8e96bd5125f286e169c271bba8c8360af7ab11b3",
+    "architecture": "densenet121",
+    "provenance_status": "author_and_dataset_authorization_pending"
+  },
+  {
+    "filename": "efficientnetv2s_best.pth",
+    "bytes": 243459741,
+    "sha256": "4afb76e15c4ac6e1276374a3de9131ec9114f8bbc79f58813b76890fee11e863",
+    "architecture": "tf_efficientnetv2_s.in21k_ft_in1k",
+    "provenance_status": "author_and_dataset_authorization_pending"
+  }
+]

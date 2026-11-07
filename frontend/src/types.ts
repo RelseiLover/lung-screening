@@ -1,0 +1,36 @@
+export type Answers = {
+  symptom: string;
+  duration_value: string;
+  fever_value: string;
+  sputum_value: string;
+  sputum_color: string;
+  chest_value: string;
+  tb_value: string;
+};
+export type ScreeningResult = {
+  enriched_symptom: string;
+  screening_result: string;
+  confidence: number;
+  image_scores: Record<string, number>;
+  rationale: string;
+  differential: string;
+  check_suggestion: string;
+  review_note: string;
+  used_llm: boolean;
+  route_decision: string;
+  route_reason: string;
+  iteration: number;
+  rag_infectious_score: number;
+  rag_chronic_score: number;
+  rag_route_note: string;
+  retrieved_knowledge: string[];
+  agent_trace: string[];
+  infectious_specialist_score: number;
+  infectious_specialist_source: string;
+  infectious_specialist_note: string;
+  chronic_specialist_score: number;
+  chronic_specialist_source: string;
+  chronic_specialist_note: string;
+  tone: { color: string; background: string; tag: string };
+  structured_data: Record<string, unknown>;
+};

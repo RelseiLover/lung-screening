@@ -1,0 +1,19 @@
+{
+  "offline_failure_checks": {
+    "timeout": "local_fallback_passed",
+    "connection_reset": "local_fallback_passed",
+    "network_unreachable": "local_fallback_passed",
+    "http_401": "local_fallback_passed",
+    "invalid_json": "local_fallback_passed",
+    "missing_choices": "local_fallback_passed",
+    "invalid_model_content": "local_fallback_passed"
+  },
+  "live": {
+    "status": "passed",
+    "used_llm": true,
+    "elapsed_seconds": 1.81,
+    "synthetic_input": true,
+    "credential_copied": false,
+    "http_status": 200
+  }
+}

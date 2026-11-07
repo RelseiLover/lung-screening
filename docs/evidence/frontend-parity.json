@@ -1,0 +1,62 @@
+{
+  "cases": [
+    {
+      "image": "01_clear_normal_low_risk.jpg",
+      "result": "正常/低风险",
+      "route": "low_risk",
+      "parity": "passed"
+    },
+    {
+      "image": "02_clear_pneumonia_acute_infection.jpg",
+      "result": "感染性肺部异常倾向",
+      "route": "infectious",
+      "parity": "passed"
+    },
+    {
+      "image": "03_clear_tuberculosis_chronic.jpg",
+      "result": "慢性异常风险倾向",
+      "route": "chronic",
+      "parity": "passed"
+    },
+    {
+      "image": "04_boundary_pneumonia_review.jpg",
+      "result": "感染性肺部异常倾向",
+      "route": "infectious",
+      "parity": "passed"
+    },
+    {
+      "image": "05_boundary_tuberculosis_review.jpg",
+      "result": "慢性异常风险倾向",
+      "route": "chronic",
+      "parity": "passed"
+    },
+    {
+      "image": "06_normal_conflict_case.jpg",
+      "result": "感染性肺部异常倾向",
+      "route": "infectious",
+      "parity": "passed"
+    },
+    {
+      "image": null,
+      "result": "感染性肺部异常倾向",
+      "route": "infectious",
+      "parity": "passed"
+    }
+  ],
+  "scope": "Real local CNN and original workflow. Cloud LLM and optional remote specialists disabled for reproducibility.",
+  "frontend_build": "TypeScript + Vite production build passed",
+  "default_launcher": "run_app.bat: HTTP 200 at 127.0.0.1:8502; health frontend_ready=true",
+  "browser_checks": [
+    "empty-input validation",
+    "custom duration and sputum",
+    "upload JPEG",
+    "complete local screening",
+    "four result tabs",
+    "screening without image",
+    "input edits reset results",
+    "390px responsive layout without horizontal overflow",
+    "1280px desktop layout"
+  ],
+  "cloud_api_tested": false,
+  "core_changed_in_migration": false
+}

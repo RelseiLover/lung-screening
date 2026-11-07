@@ -1,0 +1,37 @@
+[
+  {
+    "repository": "sukhmani1303/tuberculosis-vit-model",
+    "revision": "4388ed11fbfd0b0bc5f554920a9c9708485bd1d2",
+    "declared_license": "apache-2.0",
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "config.json",
+      "handler.py",
+      "metadata.json",
+      "model.pt",
+      "model_archive.zip",
+      "pytorch_model.bin",
+      "requirements.txt"
+    ],
+    "url": "https://huggingface.co/sukhmani1303/tuberculosis-vit-model"
+  },
+  {
+    "repository": "radiovision/Pneumonia-Detection",
+    "revision": "5a4f2cc6e67b5e8fb0a84030b98e7937a603e9ee",
+    "declared_license": "apache-2.0",
+    "files": [
+      ".gitattributes",
+      ".gitignore",
+      "README.md",
+      "config.json",
+      "preprocessor_config.json",
+      "pytorch_model.bin",
+      "runs/09_12-04-04_70fac59b5b21/1646827459.0909398/events.out.tfevents.1646827459.70fac59b5b21.108.4",
+      "runs/09_12-04-04_70fac59b5b21/events.out.tfevents.1646827459.70fac59b5b21.108.3",
+      "runs/09_12-04-04_70fac59b5b21/events.out.tfevents.1646829382.70fac59b5b21.108.5",
+      "training_args.bin"
+    ],
+    "url": "https://huggingface.co/radiovision/Pneumonia-Detection"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "pages": 17,
+  "page_limit": 30,
+  "sha256": "3747100388f8d6c984a26600fb2da92d5436941c1c59048e8868e8b2df6f7182",
+  "required_sections": [
+    "项目概述",
+    "需求分析",
+    "系统架构设计",
+    "AI技术方案",
+    "核心功能实现",
+    "测试与部署",
+    "技术创新点",
+    "应用创新点",
+    "总结与展望"
+  ],
+  "visual_review": "All 17 pages rendered and reviewed",
+  "source": "Adapted from existing project research report; current implementation and evidence checked"
+}

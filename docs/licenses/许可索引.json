@@ -1,0 +1,137 @@
+[
+  {
+    "package": "streamlit",
+    "version": "1.57.0",
+    "declared_license": "Apache-2.0",
+    "files": []
+  },
+  {
+    "package": "langgraph",
+    "version": "1.1.10",
+    "declared_license": "MIT",
+    "files": [
+      "docs/licenses/langgraph/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "numpy",
+    "version": "2.1.2",
+    "declared_license": "Copyright (c) 2005-2024, NumPy Developers.",
+    "files": [
+      "docs/licenses/numpy/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "pillow",
+    "version": "11.0.0",
+    "declared_license": "MIT-CMU",
+    "files": [
+      "docs/licenses/pillow/LICENSE"
+    ]
+  },
+  {
+    "package": "scikit-learn",
+    "version": "1.8.0",
+    "declared_license": "BSD-3-Clause",
+    "files": [
+      "docs/licenses/scikit-learn/licenses/COPYING"
+    ]
+  },
+  {
+    "package": "torch",
+    "version": "2.6.0+cu126",
+    "declared_license": "BSD-3-Clause",
+    "files": [
+      "docs/licenses/torch/LICENSE",
+      "docs/licenses/torch/NOTICE"
+    ]
+  },
+  {
+    "package": "torchvision",
+    "version": "0.21.0+cu126",
+    "declared_license": "BSD",
+    "files": [
+      "docs/licenses/torchvision/LICENSE"
+    ]
+  },
+  {
+    "package": "timm",
+    "version": "1.0.26",
+    "declared_license": "Apache-2.0",
+    "files": [
+      "docs/licenses/timm/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "transformers",
+    "version": "5.7.0",
+    "declared_license": "Apache 2.0 License",
+    "files": [
+      "docs/licenses/transformers/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "huggingface-hub",
+    "version": "1.12.2",
+    "declared_license": "Apache-2.0",
+    "files": [
+      "docs/licenses/huggingface-hub/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "requests",
+    "version": "2.32.3",
+    "declared_license": "Apache-2.0",
+    "files": [
+      "docs/licenses/requests/LICENSE"
+    ]
+  },
+  {
+    "package": "fastapi",
+    "version": "0.141.1",
+    "declared_license": "MIT",
+    "files": [
+      "docs/licenses/fastapi/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "uvicorn",
+    "version": "0.46.0",
+    "declared_license": "BSD-3-Clause",
+    "files": [
+      "docs/licenses/uvicorn/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "package": "python-multipart",
+    "version": "0.0.27",
+    "declared_license": "Apache-2.0",
+    "files": [
+      "docs/licenses/python-multipart/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "react",
+    "version": "19.3.1",
+    "declared_license": "MIT",
+    "files": [
+      "docs/licenses/react/LICENSE"
+    ]
+  },
+  {
+    "package": "react-dom",
+    "version": "19.3.1",
+    "declared_license": "MIT",
+    "files": [
+      "docs/licenses/react-dom/LICENSE"
+    ]
+  },
+  {
+    "package": "scheduler",
+    "version": "0.28.0",
+    "declared_license": "MIT",
+    "files": [
+      "docs/licenses/scheduler/LICENSE"
+    ]
+  }
+]
